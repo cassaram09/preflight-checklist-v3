@@ -1,3 +1,5 @@
+"use client";
+
 import { classes } from "@/helpers/styles.helpers";
 import styles from "./Checklist.module.scss";
 import { Text } from "@/primitives";
@@ -16,6 +18,7 @@ export type ChecklistData = {
   tasks: {
     title: string;
     result: string;
+    critical?: boolean;
     subtasks?: {
       title: string;
       result: string;
@@ -60,8 +63,6 @@ export default function Checklist({
       navigator.vibrate(150);
     }
   };
-
-  console.log(tasksCompleted);
 
   const completedTasks = Object.keys(tasksCompleted).length;
   const totalTasks = data.tasks.length;

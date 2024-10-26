@@ -1,0 +1,8 @@
+{
+  "title": "Engine Failure During Takeoff Roll",
+  "color": "yellow",
+  "tasks": [
+    { "title": "Throttle", "result": "Idle", "critical": true },
+    { "title": "Brakes", "result": "Apply", "critical": true }
+  ]
+}

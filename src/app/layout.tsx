@@ -13,6 +13,7 @@ const geistMono = localFont({
 });
 
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 
 const APP_NAME = "PWA App";
 const APP_DEFAULT_TITLE = "My Awesome PWA App";
@@ -66,6 +67,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <Link href="/">Workflows</Link>
+              </li>
+              <li>
+                <a href="/emergency-procedures">Emergency Procedures</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
         {children}
       </body>
     </html>
