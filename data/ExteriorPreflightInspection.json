@@ -1,0 +1,21 @@
+{
+  "title": "Exterior Preflight Inspection",
+  "color": "yellow",
+  "tasks": [
+    { "title": "Baggage Door", "result": "Secure" },
+    { "title": "Empennage Elevators/Rudder", "result": "Check" },
+    { "title": "RH LE/Aileron/Wingtop/Flap", "result": "Check" },
+    { "title": "RH Tire/Brake", "result": "Check" },
+    { "title": "RH Fuel (Sump/Quantity/Cap)", "result": "Check" },
+    { "title": "Oil (5QT Min)/Fuel Strainer", "result": "Check" },
+    { "title": "Propeller/Inlet/Alternator Belt", "result": "Check" },
+    { "title": "Nose Strut (Compression 2-3\")/Tire", "result": "Check" },
+    { "title": "Air Filter", "result": "Check" },
+    { "title": "Windshield", "result": "Check" },
+    { "title": "Static Port", "result": "Check" },
+    { "title": "LH Tire/Brake", "result": "Check" },
+    { "title": "LH LE/Aileron/Wingtop/Flap", "result": "Check" },
+    { "title": "LH Fuel (Sump/Quantity/Cap)", "result": "Check" },
+    { "title": "Chocks/Tie Downs", "result": "Removed" }
+  ]
+}

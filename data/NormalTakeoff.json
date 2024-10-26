@@ -1,0 +1,10 @@
+{
+  "title": "Normal Takeoff",
+  "color": "green",
+  "tasks": [
+    { "title": "Flaps", "result": "Up" },
+    { "title": "Brakes (Heels on Floor)", "result": "Release" },
+    { "title": "Throttle", "result": "Full Open" },
+    { "title": "Rotate", "result": "55 KTS, then 70 VY" }
+  ]
+}

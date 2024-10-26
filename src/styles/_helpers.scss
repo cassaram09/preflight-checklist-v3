@@ -1,0 +1,20 @@
+@use "variables";
+
+@mixin hoverFocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin defaultLink {
+  text-decoration: none;
+
+  @include hoverFocus {
+    text-decoration: underline;
+    color: variables.$color-secondaryAccent;
+    span {
+      color: variables.$color-secondaryAccent;
+    }
+  }
+}

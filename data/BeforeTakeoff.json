@@ -1,0 +1,31 @@
+{
+  "title": "Before Takeoff",
+  "color": "yellow",
+  "tasks": [
+    { "title": "Parking Brake", "result": "Set" },
+    { "title": "Fuel Selector Valve", "result": "Both" },
+    { "title": "Trim", "result": "Set" },
+    { "title": "Flight Controls", "result": "Free and Correct" },
+    { "title": "Primer", "result": "In and Locked" },
+    {
+      "title": "Run-up",
+      "result": "",
+      "subtasks": [
+        { "title": "Throttle", "result": "1700 RPM" },
+        { "title": "Mixture", "result": "Lean for Best Power" },
+        { "title": "Magnetos", "result": "Check (125Max/50Diff)" },
+        { "title": "Gauges", "result": "Vacuum/Oil T&P/Ammeter" },
+        { "title": "Carb Heat", "result": "ON (RPM DROP)" },
+        { "title": "Throttle Idle", "result": "Check (still runs)" },
+        { "title": "Carb Heat", "result": "OFF" }
+      ]
+    },
+    { "title": "Flight Instruments", "result": "Set" },
+    { "title": "Navigation Radios & Instruments", "result": "Set" },
+    { "title": "Comm Radios (Tower/CTAF/Standby)", "result": "Set" },
+    { "title": "Takeoff Briefing", "result": "Briefed" },
+    { "title": "Seatbelts/Harnesses/Doors/Windows", "result": "Secure" },
+    { "title": "Parking Brake", "result": "Release" },
+    { "title": "Lights (Landing Light)", "result": "As Required" }
+  ]
+}

@@ -1,0 +1,53 @@
+@use "variables";
+@use "helpers";
+
+@mixin button {
+  .root {
+    height: 40px;
+    display: grid;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px variables.$spacing-md;
+    cursor: pointer;
+
+    border-radius: variables.$spacing-lg;
+    transition: all variables.$transition-fast;
+
+    &.orange {
+      background-color: variables.$color-secondaryAccent;
+      border: 1px solid variables.$color-secondaryAccent;
+
+      @include helpers.hoverFocus {
+        background-color: variables.$color-white;
+
+        .text {
+          color: variables.$color-secondaryAccent;
+        }
+      }
+    }
+
+    &.grey {
+      background-color: variables.$color-main;
+      border: 1px solid variables.$color-main;
+
+      @include helpers.hoverFocus {
+        background-color: variables.$color-white;
+
+        .text {
+          color: variables.$color-main;
+        }
+      }
+    }
+  }
+
+  .text {
+    display: block;
+    white-space: pre;
+    color: variables.$color-white;
+    text-transform: uppercase;
+    transition: all variables.$transition-fast;
+    position: relative;
+    top: 1px;
+  }
+}

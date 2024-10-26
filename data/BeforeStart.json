@@ -1,0 +1,12 @@
+{
+  "title": "Before Start",
+  "color": "yellow",
+  "tasks": [
+    { "title": "Passengers Safety", "result": "Briefed" },
+    { "title": "Seats/Seatbelts/Doors", "result": "Adjust & Secured" },
+    { "title": "Fuel Selector Valve", "result": "Both" },
+    { "title": "Avionics Master Switch", "result": "Off" },
+    { "title": "Circuit Breakers", "result": "Check" },
+    { "title": "Brackets", "result": "Set" }
+  ]
+}

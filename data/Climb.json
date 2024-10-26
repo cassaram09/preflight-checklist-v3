@@ -1,0 +1,9 @@
+{
+  "title": "Climb",
+  "color": "green",
+  "tasks": [
+    { "title": "Airspeed", "result": "70 to 85 KTS" },
+    { "title": "Throttle", "result": "Full Open" },
+    { "title": "Mixture", "result": "As Required" }
+  ]
+}

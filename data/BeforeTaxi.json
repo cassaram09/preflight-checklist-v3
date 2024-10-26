@@ -1,0 +1,14 @@
+{
+  "title": "Before Taxi",
+  "color": "yellow",
+  "tasks": [
+    { "title": "Avionics Switch", "result": "On" },
+    { "title": "Radios (Ground/Tower/CTAF)", "result": "Set" },
+    { "title": "Weather (ATIS/AWOS/ASOS)", "result": "Check" },
+    { "title": "Altimeter", "result": "Set" },
+    { "title": "GPS Database", "result": "Acknowledge" },
+    { "title": "Transponder (1200 or Assigned Code)", "result": "Set" },
+    { "title": "Taxi Light (Landing Lt If No Taxi)", "result": "On" },
+    { "title": "Brakes", "result": "Test" }
+  ]
+}

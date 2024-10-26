@@ -1,0 +1,20 @@
+{
+  "title": "Engine Start",
+  "color": "yellow",
+  "tasks": [
+    { "title": "Mixture", "result": "Rich" },
+    { "title": "Throttle", "result": "Open 1/8 Inch" },
+    { "title": "Carb Heat", "result": "Push Off" },
+    { "title": "Master Switch", "result": "On" },
+    { "title": "Beacon", "result": "On" },
+    { "title": "Prime (Warm 0 Cold 2-6)", "result": "As Required" },
+    { "title": "Propeller Area", "result": "Clear" },
+    { "title": "Ignition Switch", "result": "Start" },
+    { "title": "Throttle", "result": "800 to 1000 RPM" },
+    { "title": "Oil Pressure", "result": "Check" },
+    { "title": "Ammeter", "result": "Charging" },
+    { "title": "Voltmeter", "result": "28 Volt" },
+    { "title": "Mixture", "result": "Lean for Taxi" },
+    { "title": "Flaps", "result": "Retract" }
+  ]
+}

@@ -1,0 +1,102 @@
+.root {
+  display: block;
+}
+
+.sections {
+  display: grid;
+  margin-top: 32px;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.section {
+  display: block;
+  border: 1px solid base.$color-black;
+}
+
+.section__title {
+  margin-bottom: 16px;
+  padding: 10px;
+
+  &.yellow {
+    background: yellow;
+  }
+
+  &.blue {
+    background: rgb(0, 179, 255);
+  }
+
+  &.navy {
+    background: navy;
+    color: base.$color-white;
+  }
+
+  &.yellow {
+    background: yellow;
+  }
+
+  &.light_green {
+    background: rgb(2, 217, 2);
+  }
+
+  &.green {
+    background: rgb(0, 120, 0);
+    color: base.$color-white;
+  }
+
+  &.purple {
+    background: rgb(103, 2, 192);
+    color: base.$color-white;
+  }
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 8px;
+  cursor: pointer;
+
+  &.has_subtasks {
+    display: block;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid base.$color-black;
+  }
+
+  &:hover {
+    background-color: base.$color-secondaryAccent;
+  }
+
+  &.completed {
+    background-color: base.$color-main;
+
+    .task__text {
+      color: base.$color-white;
+    }
+  }
+}
+
+.subtasks {
+  padding-left: 20px;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.section_toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 8px;
+  cursor: pointer;
+  background-color: gold;
+
+  &.complete {
+    background-color: green;
+  }
+}

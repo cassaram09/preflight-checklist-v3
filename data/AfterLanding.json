@@ -1,0 +1,12 @@
+{
+  "title": "After Landing",
+  "color": "green",
+  "tasks": [
+    { "title": "Runway", "result": "Clear" },
+    { "title": "Radios/Comms", "result": "Set" },
+    { "title": "Flaps", "result": "Up" },
+    { "title": "Carb Heat", "result": "Push Cold" },
+    { "title": "Mixture", "result": "Lean For Taxi" },
+    { "title": "Lights", "result": "As Required" }
+  ]
+}

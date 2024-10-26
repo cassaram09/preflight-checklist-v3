@@ -1,0 +1,13 @@
+{
+  "title": "Before Landing",
+  "color": "green",
+  "tasks": [
+    { "title": "Carb Heat", "result": "Pull On" },
+    { "title": "Fuel Selector", "result": "Both" },
+    { "title": "Mixture", "result": "Enrich As Required" },
+    { "title": "Throttle", "result": "As Required" },
+    { "title": "Seats/Seatbelts/Harnesses", "result": "Secure" },
+    { "title": "Switches (Lights/Landing Light)", "result": "As Required" },
+    { "title": "Go-Around Contingency (CCCCCC)", "result": "Briefed" }
+  ]
+}

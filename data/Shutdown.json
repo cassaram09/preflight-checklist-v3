@@ -1,0 +1,16 @@
+{
+  "title": "Shutdown/Securing Airplane",
+  "color": "green",
+  "tasks": [
+    { "title": "Throttle", "result": "1000 RPM" },
+    { "title": "Avionics Master Switch", "result": "Off" },
+    { "title": "Lights", "result": "Off" },
+    { "title": "Mixture Idle Cut Off", "result": "Pull Lean" },
+    { "title": "Ignition Key Switch (After Engine Stop)", "result": "Off" },
+    { "title": "Master Switch", "result": "Off" },
+    { "title": "Control Lock", "result": "Install" },
+    { "title": "Hobbs & Tach", "result": "Record" },
+    { "title": "Chocks and Tie Downs", "result": "Install" },
+    { "title": "Flight Plan", "result": "Closed" }
+  ]
+}

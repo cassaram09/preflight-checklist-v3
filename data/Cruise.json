@@ -1,0 +1,10 @@
+{
+  "title": "Cruise",
+  "color": "green",
+  "tasks": [
+    { "title": "Power", "result": "2100 to 2500 RPM" },
+    { "title": "Trim", "result": "Adjust" },
+    { "title": "Mixture", "result": "Lean As Required" },
+    { "title": "Fuel Selector Valve", "result": "As Required" }
+  ]
+}

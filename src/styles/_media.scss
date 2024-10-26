@@ -1,0 +1,171 @@
+@use "variables";
+
+@mixin minWidth($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin maxWidth($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin minHeight($min) {
+  @media (min-height: $min) {
+    @content;
+  }
+}
+
+@mixin maxHeight($max) {
+  @media (max-height: $max) {
+    @content;
+  }
+}
+
+@mixin minWidthMobile {
+  @media (min-width: variables.$breakpoints-mobile) {
+    @content;
+  }
+}
+
+@mixin minWidthMobileMd {
+  @media (min-width: variables.$breakpoints-mobileMd) {
+    @content;
+  }
+}
+
+@mixin minWidthMobileLg {
+  @media (min-width: variables.$breakpoints-mobileLg) {
+    @content;
+  }
+}
+
+@mixin minWidthTablet {
+  @media (min-width: variables.$breakpoints-tablet) {
+    @content;
+  }
+}
+
+@mixin minWidthTabletMd {
+  @media (min-width: variables.$breakpoints-tabletMd) {
+    @content;
+  }
+}
+
+@mixin minWidthTabletLg {
+  @media (min-width: variables.$breakpoints-tabletLg) {
+    @content;
+  }
+}
+
+@mixin minWidthDesktop {
+  @media (min-width: variables.$breakpoints-desktop) {
+    @content;
+  }
+}
+
+@mixin minWidthDesktopMd {
+  @media (min-width: variables.$breakpoints-desktopMd) {
+    @content;
+  }
+}
+
+@mixin minWidthDesktopLg {
+  @media (min-width: variables.$breakpoints-desktopLg) {
+    @content;
+  }
+}
+
+@mixin minWidthDesktop4k {
+  @media (min-width: variables.$breakpoints-desktop4k) {
+    @content;
+  }
+}
+
+@mixin isMobile {
+  @media (max-width: calc($tablet + 1px)) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin landscapeMobile {
+  @media screen and (max-width: calc($tabletLg + 1px)) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin widthBetween($min, $max) {
+  @media (min-width: $min) and (max-width: calc($max - 1px)) {
+    @content;
+  }
+}
+
+// global container helper
+@mixin container($width: variables.$breakpoints-desktopLg) {
+  padding-left: variables.$spacing-std;
+  padding-right: variables.$spacing-std;
+  max-width: $width;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include minWidthMobile {
+    padding-left: variables.$spacing-md;
+    padding-right: variables.$spacing-md;
+  }
+
+  @include minWidthMobileMd {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthMobileLg {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthTablet {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthTabletMd {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthTabletLg {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthDesktop {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthDesktopMd {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthDesktopLg {
+    padding-left: variables.$spacing-lg;
+    padding-right: variables.$spacing-lg;
+  }
+
+  @include minWidthDesktop4k {
+    padding-left: variables.$spacing-xxxxl;
+    padding-right: variables.$spacing-xxxxl;
+  }
+
+  @content;
+}

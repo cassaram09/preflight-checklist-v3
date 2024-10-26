@@ -1,0 +1,46 @@
+{
+  "title": "Interior Preflight Inspection",
+  "color": "yellow",
+  "tasks": [
+    {
+      "title": "Tach & Hobbs",
+      "result": "Verify"
+    },
+    {
+      "title": "Documents AROW",
+      "result": "Verify"
+    },
+    {
+      "title": "Control Lock",
+      "result": "Remove"
+    },
+    {
+      "title": "Ignition Key Switch",
+      "result": "Off"
+    },
+    {
+      "title": "Avionics Master Switch",
+      "result": "Off"
+    },
+    {
+      "title": "Master Switch",
+      "result": "On"
+    },
+    {
+      "title": "Flaps",
+      "result": "Extend"
+    },
+    {
+      "title": "Fuel Quantity",
+      "result": "Check"
+    },
+    {
+      "title": "Light / Pitot Heat",
+      "result": "Check"
+    },
+    {
+      "title": "Master Switch",
+      "result": "Off"
+    }
+  ]
+}
