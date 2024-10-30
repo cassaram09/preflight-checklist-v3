@@ -15,10 +15,10 @@ const geistMono = localFont({
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 
-const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
-const APP_DESCRIPTION = "Best PWA app in the world!";
+const APP_NAME = "Flight App";
+const APP_DEFAULT_TITLE = "Flight App";
+const APP_TITLE_TEMPLATE = "%s - Flight App";
+const APP_DESCRIPTION = "Checklist and Navlogs.";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -75,6 +75,9 @@ export default function RootLayout({
               </li>
               <li>
                 <a href="/emergency-procedures">Emergency Procedures</a>
+              </li>
+              <li>
+                <a href="/navlog">Navlog</a>
               </li>
             </ul>
           </nav>
