@@ -25,13 +25,17 @@ export const calculateWCA = (
   trueCourse: number,
   windDir: number,
   windKnots: number,
-  trueAirSpeed: number
-) => {
-  const windAngle = windDir - trueCourse;
-  const windCorrection = Math.asin(
-    (windKnots / trueAirSpeed) * Math.sin(windAngle * (Math.PI / 180))
-  );
-  return windCorrection * (180 / Math.PI); // Convert back to degrees
+  trueAirspeed: number
+): number => {
+  const windDirectionRad = (windDir * Math.PI) / 180;
+
+  const windX = windKnots * Math.sin(windDirectionRad);
+  const windY = windKnots * Math.cos(windDirectionRad);
+
+  const windCorrectionAngleRad = Math.atan2(windX, trueAirspeed - windY);
+  const windCorrectionAngle = (windCorrectionAngleRad * 180) / Math.PI;
+
+  return windCorrectionAngle;
 };
 
 export const calculateGroundspeed = (
@@ -39,14 +43,21 @@ export const calculateGroundspeed = (
   windDir: number,
   windKnots: number,
   trueAirSpeed: number
-) => {
-  const wca = calculateWCA(trueCourse, windDir, windKnots, trueAirSpeed);
-  return (
-    trueAirSpeed * Math.cos(wca * (Math.PI / 180)) +
-    windKnots * Math.cos((windDir - trueCourse) * (Math.PI / 180))
-  );
-};
+): number => {
+  // Use WCA in degrees from the previous function
+  // const wca = calculateWCA(trueCourse, windDir, windKnots, trueAirSpeed);
 
+  const angleBetween = ((windDir - trueCourse) * Math.PI) / 180;
+
+  // Apply the ground speed formula
+  const groundSpeed = Math.sqrt(
+    Math.pow(trueAirSpeed, 2) +
+      Math.pow(windKnots, 2) -
+      2 * trueAirSpeed * windKnots * Math.cos(angleBetween)
+  );
+
+  return groundSpeed;
+};
 export const calculateTime = (
   distanceNM: number,
   groundspeed: number
@@ -121,28 +132,6 @@ export const haversineDistanceNM = (
   return distance; // Return the distance in nautical miles
 };
 
-// export const calculateTrueCourse = (
-//   from: Checkpoint,
-//   to: Checkpoint
-// ): number => {
-//   const lat1 = from.location.lat * (Math.PI / 180); // Convert latitude from degrees to radians
-//   const lon1 = from.location.lng * (Math.PI / 180); // Convert longitude from degrees to radians
-//   const lat2 = to.location.lat * (Math.PI / 180); // Convert latitude from degrees to radians
-//   const lon2 = to.location.lng * (Math.PI / 180); // Convert longitude from degrees to radians
-
-//   const deltaLon = lon2 - lon1;
-
-//   const y = Math.sin(deltaLon) * Math.cos(lat2);
-//   const x =
-//     Math.cos(lat1) * Math.sin(lat2) -
-//     Math.sin(lat1) * Math.cos(lat2) * Math.cos(deltaLon);
-
-//   const courseRadians = Math.atan2(y, x); // Calculate the angle in radians
-//   const courseDegrees = (courseRadians * (180 / Math.PI) + 360) % 360; // Convert to degrees and normalize
-
-//   return courseDegrees; // Return the true course in degrees
-// };
-
 export const convertCAStoTAS = (
   cas: number,
   pressureAltitudeFt: number,
@@ -204,4 +193,40 @@ export const calculateNextLatLng = (
   const newLng = (newLngRad * 180) / Math.PI;
 
   return { lat: newLat, lng: newLng };
+};
+
+export const toLegV2 = (
+  from: Checkpoint,
+  to: Checkpoint,
+  type: "climb" | "cruise" | "descend",
+  altitudeFt: number,
+  distance: number,
+  trueCourse: number,
+  magneticeVariance: number,
+  isStart = false
+): LegV2 => {
+  if (!to) {
+    return {
+      name: `${from.name}`,
+      type,
+      altitudeFt: { value: altitudeFt, unit: "FT" },
+      distance: { value: 0, unit: "NM" },
+      from,
+      to: from,
+      trueCourse: { value: trueCourse, unit: "DEG" },
+      magneticVariance: { value: magneticeVariance, unit: "DEG" },
+      isStart,
+    };
+  }
+  return {
+    name: `${from.name} to ${to.name}`,
+    type,
+    altitudeFt: { value: altitudeFt, unit: "FT" },
+    distance: { value: distance, unit: "NM" },
+    from,
+    to,
+    trueCourse: { value: trueCourse, unit: "DEG" },
+    magneticVariance: { value: magneticeVariance, unit: "DEG" },
+    isStart,
+  };
 };

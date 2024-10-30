@@ -103,8 +103,31 @@ export const interpolateCruiseData = (
 };
 
 // Helper to find closest altitude data entries
-function findClosestAltitudes(chart, pressureAltitude: number) {
-  let lower, upper;
+interface TempData {
+  BHP: number;
+  KTAS: number;
+  GPH: number;
+}
+
+interface RPMData {
+  rpm: number;
+  temps: {
+    "20Cbelow": TempData;
+    standard: TempData;
+    "20Cabove": TempData;
+  };
+}
+
+interface AltitudeData {
+  pressureAltitudeFt: number;
+  rpmData: RPMData[];
+}
+
+function findClosestAltitudes(
+  chart: AltitudeData[],
+  pressureAltitude: number
+): [AltitudeData, AltitudeData] {
+  let lower: AltitudeData | undefined, upper: AltitudeData | undefined;
   for (let i = 0; i < chart.length - 1; i++) {
     if (
       chart[i].pressureAltitudeFt <= pressureAltitude &&
@@ -115,12 +138,12 @@ function findClosestAltitudes(chart, pressureAltitude: number) {
       break;
     }
   }
-  return [lower, upper];
+  return [lower!, upper!];
 }
 
 // Helper to interpolate at a specific altitude for RPM and temperature
 function interpolateAtAltitude(
-  altitudeData: any,
+  altitudeData: AltitudeData,
   rpm: number,
   pressureAltitude: number,
   actualTemp: number
@@ -164,7 +187,7 @@ function interpolateAtAltitude(
 }
 
 // Helper to find closest RPM data entries
-function findClosestRPMs(rpmData: any, rpm: number) {
+function findClosestRPMs(rpmData: RPMData[], rpm: number): RPMData[] {
   let lower, upper;
   for (let i = 0; i < rpmData.length - 1; i++) {
     if (rpmData[i].rpm <= rpm && rpmData[i + 1].rpm >= rpm) {
@@ -173,7 +196,7 @@ function findClosestRPMs(rpmData: any, rpm: number) {
       break;
     }
   }
-  return [lower, upper];
+  return [lower as RPMData, upper as RPMData];
 }
 
 // Helper to determine temperature level for interpolation

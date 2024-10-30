@@ -30,6 +30,7 @@ type Segment = Leg & {
   distance: CheckpointValue; // Distance between checkpoints
   time: CheckpointValue; // Time to travel this leg
   groundspeed: CheckpointValue; // Average groundspeed during this leg
+  fuelBurnRate: CheckpointValue; // Fuel burn rate during this leg
 };
 
 type CheckpointValue = {
@@ -99,3 +100,14 @@ type PageProps = {
   readonly params: Record<string, unknown>;
   readonly searchParams?: Record<string, unknown>;
 };
+
+type LegParams = [
+  from: number,
+  to: number,
+  type: "climb" | "cruise" | "descend",
+  altitudeFt: number,
+  distance: number,
+  trueCourse: number,
+  magneticeVariance: number,
+  isStart: boolean
+];

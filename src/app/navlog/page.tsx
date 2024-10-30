@@ -7,7 +7,7 @@ export default async function NavlogPage() {
   return (
     <ul>
       {plans.map((plan) => (
-        <li>
+        <li key={plan}>
           <Link href={`/navlog/${plan}`}>{plan}</Link>
         </li>
       ))}
