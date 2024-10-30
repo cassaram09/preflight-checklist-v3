@@ -1,0 +1,35 @@
+.root {
+  display: block;
+  overflow: scroll;
+}
+
+.segment {
+  display: table-row;
+  border-collapse: collapse;
+}
+
+.checkpoint {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.cell {
+  display: table-cell;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.totals {
+  padding: 12px;
+}
+
+.content {
+  padding: 12px;
+}
+
+.title {
+  padding: 12px;
+}

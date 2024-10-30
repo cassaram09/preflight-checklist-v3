@@ -13,12 +13,12 @@ const geistMono = localFont({
 });
 
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
+import { Header } from "@/modules/header";
 
-const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
-const APP_DESCRIPTION = "Best PWA app in the world!";
+const APP_NAME = "Flight App";
+const APP_DEFAULT_TITLE = "Flight App";
+const APP_TITLE_TEMPLATE = "%s - Flight App";
+const APP_DESCRIPTION = "Checklist and Navlogs.";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -67,18 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <Link href="/">Workflows</Link>
-              </li>
-              <li>
-                <a href="/emergency-procedures">Emergency Procedures</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         {children}
       </body>
     </html>
