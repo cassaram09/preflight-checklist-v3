@@ -63,14 +63,14 @@ export const checkpoints: Checkpoint[] = [
     windVel: { value: 6, unit: "KTS" },
     magneticVariance: { value: -7, unit: "DEG" },
   },
-  // {
-  //   name: "DESC 5700",
-  //   altitudeFt: { value: 7500, unit: "FT" },
-  //   temp: { value: 0, unit: "C" },
-  //   windDir: { value: 0, unit: "DEG" },
-  //   windVel: { value: 0, unit: "KTS" },
-  //   magneticVariance: { value: -7, unit: "DEG" },
-  // },
+  {
+    name: "DESC 5700",
+    altitudeFt: { value: 5700, unit: "FT" },
+    temp: { value: -2, unit: "C" },
+    windDir: { value: 20, unit: "DEG" },
+    windVel: { value: 6, unit: "KTS" },
+    magneticVariance: { value: -7, unit: "DEG" },
+  },
   {
     name: "KAKO",
     altitudeFt: { value: 4700, unit: "FT" },
@@ -89,6 +89,6 @@ export const legs: LegParams[] = [
   [4, 5, "cruise", 7500, 13.5, 61, -7, false],
   [5, 6, "cruise", 7500, 10, 61, -7, false],
   [6, 7, "cruise", 7500, 10, 61, -7, false],
-  [7, 8, "cruise", 7500, 17.5, 61, -7, false],
-  [8, 9, "cruise", 7500, 17.5, 61, -7, false],
+  [7, 8, "cruise", 7500, 3.27, 61, -7, false],
+  [8, 9, "cruise", 7500, 13.8, 61, -7, false],
 ];

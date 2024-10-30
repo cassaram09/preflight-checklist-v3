@@ -1,0 +1,13 @@
+.root {
+  display: grid;
+  padding: 12px;
+  border-bottom: 1px solid black;
+  nav {
+    display: flex;
+    gap: 12px;
+
+    a {
+      display: block;
+    }
+  }
+}

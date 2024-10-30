@@ -4,10 +4,8 @@
 }
 
 .segment {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 8px;
-  padding: 8px;
+  display: table-row;
+  border-collapse: collapse;
 }
 
 .checkpoint {
@@ -19,5 +17,19 @@
 }
 
 .cell {
-  width: 100px;
+  display: table-cell;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.totals {
+  padding: 12px;
+}
+
+.content {
+  padding: 12px;
+}
+
+.title {
+  padding: 12px;
 }

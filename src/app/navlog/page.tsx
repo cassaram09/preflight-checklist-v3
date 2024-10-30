@@ -1,3 +1,4 @@
+import { Text } from "@/primitives";
 import { promises as fs } from "fs";
 import Link from "next/link";
 import path from "path";
@@ -5,10 +6,12 @@ import path from "path";
 export default async function NavlogPage() {
   const plans = await getPageData();
   return (
-    <ul>
+    <ul style={{ display: "grid", gap: "16px", padding: "12px" }}>
       {plans.map((plan) => (
         <li key={plan}>
-          <Link href={`/navlog/${plan}`}>{plan}</Link>
+          <Link href={`/navlog/${plan}`}>
+            <Text variant="body2" text={plan} />
+          </Link>
         </li>
       ))}
     </ul>

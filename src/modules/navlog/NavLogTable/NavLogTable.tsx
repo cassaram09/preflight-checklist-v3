@@ -74,14 +74,14 @@ export default function NavLogTable({
   //     {stateCheckpoints.map((checkpoint, index) => {
   //       return (
   //         <div key={index} className={cl("checkpoint")}>
-  //           <Text component="p" variant="h3" text={checkpoint.name} />
+  //           <Text component="p" variant="body3" text={checkpoint.name} />
   //           <Text
-  //             component="p"
+  //             component="p" variant="body3"
   //             text={`Alt: ${checkpoint.altitudeFt.value} FT`}
   //           />
-  //           <Text component="p" text={`Temp: ${checkpoint.temp.value} C`} />
+  //           <Text component="p" variant="body3" text={`Temp: ${checkpoint.temp.value} C`} />
   //           <div>
-  //             <Text component="p" text={`WDDEG`} />
+  //             <Text component="p" variant="body3" text={`WDDEG`} />
   //             <input
   //               type="number"
   //               value={checkpoint.windDir.value}
@@ -90,7 +90,7 @@ export default function NavLogTable({
   //           </div>
 
   //           <div>
-  //             <Text component="p" text={`WV: KTS`} />
+  //             <Text component="p" variant="body3" text={`WV: KTS`} />
   //             <input
   //               value={checkpoint.windVel.value}
   //               type="number"
@@ -98,7 +98,7 @@ export default function NavLogTable({
   //             />
   //           </div>
   //           <Text
-  //             component="p"
+  //             component="p" variant="body3"
   //             text={`MV: ${checkpoint.magneticVariance.value} DEG`}
   //           />
   //         </div>
@@ -109,22 +109,24 @@ export default function NavLogTable({
 
   const renderTotals = () =>
     segments.length && (
-      <div>
-        <Text component="h2" variant="h1" text="Navlog" />
+      <div className={cl("totals")}>
         <Text
           component="p"
+          variant="body3"
           text={`Total Distance: ${getTotals(segments).totalDistance.toFixed(
             2
           )} NM`}
         />
         <Text
           component="p"
+          variant="body3"
           text={`Total Fuel Burn: ${getTotals(segments).totalFuelBurn.toFixed(
             2
           )} GAL`}
         />
         <Text
           component="p"
+          variant="body3"
           text={`Total Time: ${decimalMinToHHMMSS(
             getTotals(segments).totalTime
           )}`}
@@ -136,61 +138,86 @@ export default function NavLogTable({
     segments.length &&
     segments.map((segment, index) => (
       <div key={index} className={cl("segment")}>
-        <Text component="p" variant="h3" text={segment.name} />
         <div className={cl("cell")}>
-          <Text component="p" text={`${segment.trueCourse.value.toFixed(0)}`} />
+          <Text component="p" variant="body4" text={segment.name} />
+        </div>
+        <div className={cl("cell")}>
+          <Text component="p" variant="body3" text={segment.altitude.value} />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
+            text={`${segment.trueCourse.value.toFixed(0)}`}
+          />
+        </div>
+        <div className={cl("cell")}>
+          <Text
+            component="p"
+            variant="body3"
             text={`${segment.windCorrectionAngle.value.toFixed(0)}`}
           />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${segment.trueHeading.value.toFixed(0)}`}
           />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${segment.magneticVariance.value.toFixed(0)}`}
           />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${segment.magneticHeading.value.toFixed(0)}`}
           />
         </div>
         <div className={cl("cell")}>
-          <Text component="p" text={`${segment.distance.value.toFixed(2)}`} />
+          <Text
+            component="p"
+            variant="body3"
+            text={`${segment.distance.value.toFixed(2)}`}
+          />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${segment.trueAirSpeed.value.toFixed(0)}`}
           />
         </div>
         <div className={cl("cell")}>
-          <Text component="p" text={`${segment.fuelBurn.value.toFixed(2)}`} />
+          <Text
+            component="p"
+            variant="body3"
+            text={`${segment.fuelBurn.value.toFixed(2)}`}
+          />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${segment.fuelBurnRate.value.toFixed(2)}`}
           />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${decimalMinToHHMMSS(segment.time.value)}`}
           />
         </div>
         <div className={cl("cell")}>
           <Text
             component="p"
+            variant="body3"
             text={`${segment.groundspeed.value.toFixed(0)}`}
           />
         </div>
@@ -200,50 +227,61 @@ export default function NavLogTable({
   const renderHeaders = () => (
     <div className={cl("segment")}>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"name"} />
+        <Text component="p" variant="body3" weight="bold" text={"Name"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"TC"} />
+        <Text component="p" variant="body3" weight="bold" text={"Alt"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"WCA"} />
+        <Text component="p" variant="body3" weight="bold" text={"TC"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"TH"} />
+        <Text component="p" variant="body3" weight="bold" text={"WCA"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"MV"} />
+        <Text component="p" variant="body3" weight="bold" text={"TH"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"MH"} />
+        <Text component="p" variant="body3" weight="bold" text={"MV"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"Dist"} />
+        <Text component="p" variant="body3" weight="bold" text={"MH"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"TAS"} />
+        <Text component="p" variant="body3" weight="bold" text={"Dist"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"Fuel"} />
+        <Text component="p" variant="body3" weight="bold" text={"TAS"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"Fuel Rate"} />
+        <Text component="p" variant="body3" weight="bold" text={"Fuel"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"Time"} />
+        <Text component="p" variant="body3" weight="bold" text={"GPH"} />
       </div>
       <div className={cl("cell")}>
-        <Text component="p" variant="h3" text={"GS"} />
+        <Text component="p" variant="body3" weight="bold" text={"Time"} />
+      </div>
+      <div className={cl("cell")}>
+        <Text component="p" variant="body3" weight="bold" text={"GS"} />
       </div>
     </div>
   );
 
   return (
     <div className={cl("root")}>
+      <Text
+        component="h2"
+        variant="body1"
+        text="Navlog"
+        className={cl("title")}
+      />
       {renderTotals()}
       {/* {renderCheckpoints()} */}
-      {renderHeaders()}
-      {renderSegments()}
+      <div className={cl("content")}>
+        {renderHeaders()}
+        {renderSegments()}
+      </div>
     </div>
   );
 }
@@ -333,6 +371,11 @@ function getCruiseData(leg: LegV2, index: number, segments: Segment[]) {
 
   const fuelBurnRate: CheckpointValue = { value: cruiseData.GPH, unit: "GPH" };
 
+  const altitude: CheckpointValue = {
+    value: leg.from.altitudeFt.value,
+    unit: "FT",
+  };
+
   return {
     name: leg.name,
     from: leg.from,
@@ -349,6 +392,7 @@ function getCruiseData(leg: LegV2, index: number, segments: Segment[]) {
     distance,
     trueAirSpeed,
     fuelBurnRate,
+    altitude,
   };
 }
 
@@ -426,6 +470,11 @@ function getClimbData(leg: LegV2) {
 
   const fuelBurnRate: CheckpointValue = { value: 0, unit: "GPH" };
 
+  const altitude: CheckpointValue = {
+    value: leg.from.altitudeFt.value,
+    unit: "FT",
+  };
+
   return {
     name: leg.name,
     from: leg.from,
@@ -442,6 +491,7 @@ function getClimbData(leg: LegV2) {
     distance,
     trueAirSpeed,
     fuelBurnRate,
+    altitude,
   };
 }
 function getTotals(segments: Segment[]): Totals {

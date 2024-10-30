@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
+import { Header } from "@/modules/header";
 
 const APP_NAME = "Flight App";
 const APP_DEFAULT_TITLE = "Flight App";
@@ -67,21 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <Link href="/">Workflows</Link>
-              </li>
-              <li>
-                <a href="/emergency-procedures">Emergency Procedures</a>
-              </li>
-              <li>
-                <a href="/navlog">Navlog</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         {children}
       </body>
     </html>

@@ -31,6 +31,7 @@ type Segment = Leg & {
   time: CheckpointValue; // Time to travel this leg
   groundspeed: CheckpointValue; // Average groundspeed during this leg
   fuelBurnRate: CheckpointValue; // Fuel burn rate during this leg
+  altitude: CheckpointValue;
 };
 
 type CheckpointValue = {
