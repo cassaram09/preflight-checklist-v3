@@ -98,8 +98,8 @@ type LegV2 = {
 };
 
 type PageProps = {
-  readonly params: Record<string, unknown>;
-  readonly searchParams?: Record<string, unknown>;
+  readonly params: Promise<Record<string, unknown>>;
+  readonly searchParams?: Promise<Record<string, unknown>>;
 };
 
 type LegParams = [
@@ -112,3 +112,33 @@ type LegParams = [
   magneticeVariance: number,
   isStart: boolean
 ];
+
+type AirportData = {
+  airport: string;
+  name: string;
+  location: {
+    latitude: number;
+    longitude: number;
+    elevation_ft: number;
+  };
+  radio_frequencies: {
+    ATIS?: string;
+    CTAF: string;
+    Ground?: string;
+    Tower?: string;
+    FSS: {
+      name: string;
+      frequency: string;
+    };
+    AWOS?: string;
+  };
+  runways: {
+    runway: string;
+    dimensions_ft: string;
+    surface: string;
+    condition: string;
+    lighting: string;
+    markings_condition: string;
+  }[];
+  fuel_services: string[];
+};

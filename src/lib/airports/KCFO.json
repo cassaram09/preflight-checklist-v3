@@ -1,0 +1,40 @@
+{
+  "airport": "KCFO",
+  "name": "Colorado Air and Space Port",
+  "location": {
+    "latitude": 39.7864,
+    "longitude": -104.5428,
+    "elevation_ft": 5515
+  },
+  "radio_frequencies": {
+    "ATIS": "119.025 MHz",
+    "CTAF": "120.2 MHz",
+    "Ground": "124.7 MHz",
+    "Tower": "120.2 MHz",
+    "FSS": {
+      "name": "Denver Radio",
+      "frequency": "122.2 MHz"
+    }
+  },
+  "runways": [
+    {
+      "runway": "17/35",
+      "dimensions_ft": "8000 x 100",
+      "surface": "Asphalt",
+      "condition": "Good",
+      "lighting": "Medium Intensity",
+      "approaches": ["ILS", "RNAV"],
+      "markings_condition": "Good"
+    },
+    {
+      "runway": "8/26",
+      "dimensions_ft": "8000 x 100",
+      "surface": "Asphalt",
+      "condition": "Good",
+      "lighting": "Medium Intensity",
+      "approaches": ["ILS", "RNAV"],
+      "markings_condition": "Good"
+    }
+  ],
+  "fuel_services": ["100LL", "Jet A"]
+}

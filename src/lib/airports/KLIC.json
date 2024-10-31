@@ -1,0 +1,28 @@
+{
+  "airport": "KLIC",
+  "name": "Limon Municipal Airport",
+  "location": {
+    "latitude": 39.2745,
+    "longitude": -103.6669,
+    "elevation_ft": 5374
+  },
+  "radio_frequencies": {
+    "CTAF": "122.9 MHz",
+    "FSS": {
+      "name": "Denver Radio",
+      "frequency": "122.4 MHz"
+    },
+    "ASOS": "121.125 MHz"
+  },
+  "runways": [
+    {
+      "runway": "15/33",
+      "dimensions_ft": "4700 x 60",
+      "surface": "Asphalt",
+      "condition": "Good",
+      "lighting": "Medium Intensity",
+      "markings_condition": "Good"
+    }
+  ],
+  "fuel_services": ["100LL"]
+}
