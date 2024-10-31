@@ -20,6 +20,9 @@ export default function Header(): JSX.Element {
         <Link href="/navlog">
           <Text variant="body2" text={"Navlog"} />
         </Link>
+        <Link href="/airports">
+          <Text variant="body2" text={"Airports"} />
+        </Link>
       </nav>
     </header>
   );
