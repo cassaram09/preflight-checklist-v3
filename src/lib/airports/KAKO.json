@@ -1,0 +1,28 @@
+{
+  "airport": "KAKO",
+  "name": "Colorado Plains Regional Airport",
+  "location": {
+    "latitude": 40.1753,
+    "longitude": -103.2233,
+    "elevation_ft": 4716
+  },
+  "radio_frequencies": {
+    "CTAF": "122.8 MHz",
+    "FSS": {
+      "name": "Denver Radio",
+      "frequency": "122.2 MHz"
+    },
+    "AWOS": "135.475 MHz"
+  },
+  "runways": [
+    {
+      "runway": "11/29",
+      "dimensions_ft": "7001 x 100",
+      "surface": "Asphalt",
+      "condition": "Fair",
+      "lighting": "Medium Intensity",
+      "markings_condition": "Worn & Faded"
+    }
+  ],
+  "fuel_services": ["100LL", "Jet A"]
+}
