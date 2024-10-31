@@ -99,7 +99,7 @@ type LegV2 = {
 
 type PageProps = {
   readonly params: Promise<Record<string, unknown>>;
-  readonly searchParams?: Record<string, unknown>;
+  readonly searchParams?: Promise<Record<string, unknown>>;
 };
 
 type LegParams = [
