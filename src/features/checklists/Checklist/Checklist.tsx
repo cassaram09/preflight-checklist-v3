@@ -4,12 +4,12 @@ import { classes } from "@/helpers/styles.helpers";
 import styles from "./Checklist.module.scss";
 import { Text } from "@/primitives";
 import { useEffect, useState } from "react";
-import { LOCALE_STORAGE_KEY } from "@/modules/home/HomeContainer/HomeContainer";
 import AnimateHeight from "react-animate-height";
 
 export type ChecklistProps = {
   readonly title: string;
   readonly data: ChecklistData;
+  readonly storageKey: string;
 };
 
 export type ChecklistData = {
@@ -29,6 +29,7 @@ export type ChecklistData = {
 export default function Checklist({
   title,
   data,
+  storageKey,
 }: ChecklistProps): JSX.Element {
   const cl = classes(styles);
 
@@ -41,26 +42,29 @@ export default function Checklist({
   const toggle = () => setOpen(!open);
 
   useEffect(() => {
-    const storedData = localStorage.getItem(LOCALE_STORAGE_KEY);
+    const storedData = localStorage.getItem(storageKey);
 
     if (storedData) {
       setTasksCompleted(JSON.parse(storedData));
+      setOpen(true);
     }
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(tasksCompleted));
-  }, [tasksCompleted]);
 
   const toggleTaskCompleted = (uniqueTaskName: string) => {
     const _tasks = structuredClone(tasksCompleted);
     if (_tasks[uniqueTaskName]) {
       delete _tasks[uniqueTaskName];
       setTasksCompleted(_tasks);
+      localStorage.setItem(storageKey, JSON.stringify(_tasks));
+
       navigator.vibrate(300);
     } else {
       setTasksCompleted({ ..._tasks, [uniqueTaskName]: true });
       navigator.vibrate(150);
+      localStorage.setItem(
+        storageKey,
+        JSON.stringify({ ..._tasks, [uniqueTaskName]: true })
+      );
     }
   };
 
@@ -71,21 +75,18 @@ export default function Checklist({
 
   return (
     <div className={cl("root")}>
-      <button
-        onClick={toggle}
-        className={cl([
-          "section_toggle",
-          completedTasks == totalTasks && "complete",
-        ])}
+      <div
+        className={cl(["header", completedTasks == totalTasks && "complete"])}
       >
-        <Text text={title} variant="body1" component="h2" />
-        <Text text={"toggle"} variant="body2" />
-        <Text text={`(${completedTasks}/${totalTasks})`} variant="body2" />
-      </button>
+        <button onClick={toggle} className={cl(["section_toggle"])}>
+          <Text text={title} variant="body1" component="h2" />
+          <Text text={`(${completedTasks}/${totalTasks})`} variant="body2" />
+        </button>
 
-      <button onClick={resetChecklist} className={cl("reset")}>
-        reset
-      </button>
+        <button onClick={resetChecklist} className={cl("reset")}>
+          <Text text={"Reset"} variant="body1" component="h2" />
+        </button>
+      </div>
 
       <AnimateHeight height={open ? "auto" : 0} duration={250}>
         <div className={cl("tasks")}>
@@ -108,8 +109,8 @@ export default function Checklist({
                   type="button"
                   className={cl("button")}
                 >
-                  <Text text={task.title} variant="h3" component="h3" />
-                  <Text text={task.result} variant="h3" component="h3" />
+                  <Text text={task.title} variant="body4" component="p" />
+                  <Text text={task.result} variant="body4" component="p" />
                 </button>
 
                 <div className={cl("subtasks")}>

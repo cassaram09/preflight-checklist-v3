@@ -230,3 +230,16 @@ export const toLegV2 = (
     isStart,
   };
 };
+
+export const getBaseUrl = () => {
+  const vercel: number = Number(process.env.VERCEL);
+  const vercelEnv = process.env.VERCEL_ENV;
+  if (vercel == 1) {
+    if (vercel && vercelEnv == "production") {
+      return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+    }
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return process.env.BASE_URL;
+};

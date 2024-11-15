@@ -1,19 +1,8 @@
-import localFont from "next/font/local";
 import "../styles/global.scss";
-
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
 import type { Metadata, Viewport } from "next";
-import { Header } from "@/modules/header";
+import { Header } from "@/features/header";
+
+// how are the fonts being loaded?
 
 const APP_NAME = "Flight App";
 const APP_DEFAULT_TITLE = "Flight App";
@@ -66,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Header />
         {children}
       </body>

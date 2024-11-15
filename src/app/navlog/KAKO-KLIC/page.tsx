@@ -1,4 +1,4 @@
-import { NavLogTable } from "@/modules/navlog";
+import { NavLogTable } from "@/features/navlog";
 import { checkpoints, legs } from "@/lib/plans/KAKO-KLIC";
 
 export default async function NavlogPage() {

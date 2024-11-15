@@ -42,12 +42,9 @@ export const spacing = {
 };
 
 export const fontFamily = {
-  title: "sans-serif",
-  body: "sans-serif",
-  accent: "sans-serif",
-  menoBanner: "sans-serif",
-  behaviorLine: "sans-serif",
-  libreBaskerville: "serif",
+  title: "'Geist Mono', monospace",
+  body: "'Geist Mono', monospace",
+  accent: "'Geist Sans', sans-serif",
 };
 
 export const fontSize = {
@@ -95,14 +92,11 @@ export const boxShadow = {
 };
 
 export const fontFamilies = {
-  menoBanner: {
-    "font-family": fontFamily.menoBanner,
+  geistMono: {
+    "font-family": fontFamily.geistMono,
   },
-  behaviorLine: {
-    "font-family": fontFamily.behaviorLine,
-  },
-  libreBaskerville: {
-    "font-family": fontFamily.libreBaskerville,
+  geistSans: {
+    "font-family": fontFamily.geistSans,
   },
 };
 
@@ -111,31 +105,37 @@ export const typography = {
     "font-size": fontSize.size36,
     "line-height": lineHeight.size36,
     "font-weight": fontWeight.normal,
+    "font-family": fontFamily.title,
   },
   h2: {
     "font-size": fontSize.size32,
     "line-height": lineHeight.size32,
     "font-weight": fontWeight.normal,
+    "font-family": fontFamily.title,
   },
   h3: {
     "font-size": fontSize.size22,
     "line-height": lineHeight.size22,
     "font-weight": fontWeight.normal,
+    "font-family": fontFamily.title,
   },
   h4: {
     "font-size": fontSize.size18,
     "line-height": lineHeight.size18,
     "font-weight": fontWeight.normal,
+    "font-family": fontFamily.title,
   },
   h5: {
     "font-size": fontSize.size16,
     "line-height": lineHeight.size16,
     "font-weight": fontWeight.normal,
+    "font-family": fontFamily.title,
   },
   h6: {
     "font-size": fontSize.size14,
     "line-height": lineHeight.size14,
     "font-weight": fontWeight.normal,
+    "font-family": fontFamily.title,
   },
   body1: {
     "font-size": fontSize.size22,

@@ -6,8 +6,6 @@ OUTPUT_DIR=$SCRIPT_DIR/../$P/$1
 
 mkdir $OUTPUT_DIR || exit
 
-mkdir $OUTPUT_DIR/messages
-
 cat << EOF > $OUTPUT_DIR/$1.tsx
 import { classes } from '@/helpers/styles.helpers';
 import styles from './$1.module.scss';

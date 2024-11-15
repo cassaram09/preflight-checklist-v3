@@ -9,6 +9,7 @@
     { "title": "GPS Database", "result": "Acknowledge" },
     { "title": "Transponder (1200 or Assigned Code)", "result": "Set" },
     { "title": "Taxi Light (Landing Lt If No Taxi)", "result": "On" },
-    { "title": "Brakes", "result": "Test" }
+    { "title": "Brakes", "result": "Test" },
+    { "title": "Exchange flight controls", "result": "Test" }
   ]
 }

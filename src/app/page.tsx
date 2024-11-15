@@ -1,5 +1,9 @@
-import { HomeContainer } from "@/modules/home";
+import { Container } from "@/primitives";
 
 export default function Home() {
-  return <HomeContainer />;
+  return (
+    <div>
+      <Container>Home.</Container>
+    </div>
+  );
 }

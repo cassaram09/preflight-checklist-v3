@@ -1,0 +1,30 @@
+.root {
+  display: block;
+  padding: 48px 0px;
+}
+
+.container {
+  display: grid;
+  gap: 24px;
+}
+
+.list {
+  display: grid;
+  gap: 16px;
+}
+
+.item {
+  a {
+    display: block;
+    padding: 24px;
+    border: 2px solid base.$color-black;
+    border-radius: 4px;
+
+    @include base.hoverFocus {
+      background: base.$color-blue;
+      p {
+        color: base.$color-white;
+      }
+    }
+  }
+}

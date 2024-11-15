@@ -10,7 +10,11 @@ export default function Header(): JSX.Element {
     <header className={cl("root")}>
       <nav>
         <Link href="/">
-          <Text variant="body2" text={"Workflows"} />
+          <Text variant="body2" text={"Home"} />
+        </Link>
+
+        <Link href="/checklists">
+          <Text variant="body2" text={"Checklists"} />
         </Link>
 
         <Link href="/emergency-procedures">

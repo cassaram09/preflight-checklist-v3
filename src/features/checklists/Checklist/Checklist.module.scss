@@ -1,7 +1,29 @@
 .root {
   display: block;
+  padding: 48px 0px;
 }
 
+.header {
+  display: grid;
+  gap: 24px;
+  background-color: gold;
+  padding: 24px;
+
+  &.complete {
+    background-color: green;
+  }
+}
+
+.reset {
+  border: 2px solid base.$color-black;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: base.$color-white;
+}
+
+.tasks {
+  margin-top: 32px;
+}
 .sections {
   display: grid;
   margin-top: 32px;
@@ -53,7 +75,7 @@
 .task {
   display: flex;
   justify-content: space-between;
-  padding: 16px 8px;
+
   cursor: pointer;
 
   &.has_subtasks {
@@ -69,9 +91,9 @@
   }
 
   &.completed {
-    background-color: base.$color-main;
+    background-color: base.$color-blue;
 
-    .task__text {
+    p {
       color: base.$color-white;
     }
   }
@@ -87,6 +109,7 @@
   align-items: center;
   gap: 24px;
   justify-content: space-between;
+  padding: 16px 8px;
 }
 
 .section_toggle {
@@ -94,9 +117,7 @@
   justify-content: space-between;
   padding: 16px 8px;
   cursor: pointer;
-  background-color: gold;
-
-  &.complete {
-    background-color: green;
-  }
+  border: 2px solid base.$color-black;
+  border-radius: 4px;
+  background-color: base.$color-white;
 }

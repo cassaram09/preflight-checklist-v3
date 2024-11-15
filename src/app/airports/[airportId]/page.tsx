@@ -1,4 +1,4 @@
-import { AirportDetailContainer } from "@/modules/airports";
+import { AirportDetailContainer } from "@/features/airports";
 
 import KAKO from "../../../lib/airports/KAKO.json";
 import KCFO from "../../../lib/airports/KCFO.json";
