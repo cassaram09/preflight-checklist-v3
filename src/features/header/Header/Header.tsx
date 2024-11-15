@@ -1,31 +1,29 @@
 import { classes } from "@/helpers/styles.helpers";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import { Text } from "@/primitives";
 
 export default function Header(): JSX.Element {
   const cl = classes(styles);
 
   return (
-    <header className={cl("root")}>
+    <header className={cl("root")} tabIndex={-1}>
       <nav>
         <Link href="/">
-          <Text variant="body2" text={"Home"} />
+          <svg className={cl("icon")}>
+            <use href="/icons/sprite.icon.svg#home" />
+          </svg>
         </Link>
 
         <Link href="/checklists">
-          <Text variant="body2" text={"Checklists"} />
+          <svg className={cl("icon")}>
+            <use href="/icons/sprite.icon.svg#checklist" />
+          </svg>
         </Link>
 
         <Link href="/emergency-procedures">
-          <Text variant="body2" text={"Emg Proc"} />
-        </Link>
-
-        <Link href="/navlog">
-          <Text variant="body2" text={"Navlog"} />
-        </Link>
-        <Link href="/airports">
-          <Text variant="body2" text={"Airports"} />
+          <svg className={cl("icon")}>
+            <use href="/icons/sprite.icon.svg#warning" />
+          </svg>
         </Link>
       </nav>
     </header>

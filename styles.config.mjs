@@ -8,6 +8,10 @@ export const color = {
   red: "#ff0000",
   blue: "#1b52ee",
   lightGrey: "#eeede3",
+  gold: "#d4af37",
+  purple: "#6a0dad",
+  green: "#00ff00",
+  orange: "#ff8c00",
 };
 
 export const breakpoints = {

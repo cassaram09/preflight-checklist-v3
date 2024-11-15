@@ -1,6 +1,6 @@
 import { Checklist, ChecklistData } from "@/features/checklists";
 import { getBaseUrl } from "@/helpers/utils.helpers";
-import { Container, Text } from "@/primitives";
+import { Text } from "@/primitives";
 import Link from "next/link";
 
 export default async function ChecklistIdPage({
@@ -15,19 +15,17 @@ export default async function ChecklistIdPage({
   }
 
   return (
-    <main>
-      <Container>
-        <Link href={"/checklists"}>
-          <Text text={"< Back"} variant="body4" component="p" />
-        </Link>
+    <div>
+      <Link href={"/checklists"}>
+        <Text text={"< Back"} variant="body4" component="p" />
+      </Link>
 
-        <Checklist
-          title={checklist.title}
-          data={checklist}
-          storageKey={`checklist-${checklistId}`}
-        />
-      </Container>
-    </main>
+      <Checklist
+        title={checklist.title}
+        data={checklist}
+        storageKey={`checklist-${checklistId}`}
+      />
+    </div>
   );
 }
 

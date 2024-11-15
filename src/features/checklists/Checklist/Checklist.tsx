@@ -71,7 +71,10 @@ export default function Checklist({
   const completedTasks = Object.keys(tasksCompleted).length;
   const totalTasks = data.tasks.length;
 
-  const resetChecklist = () => setTasksCompleted({});
+  const resetChecklist = () => {
+    setTasksCompleted({});
+    navigator.vibrate(500);
+  };
 
   return (
     <div className={cl("root")}>
